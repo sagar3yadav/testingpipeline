@@ -1,9 +1,7 @@
 # import module
 from datetime import datetime
 
-
 data = "hello sagar everthing is working fine in this\n Congratulation !!!!! \n You have completed your assignment\n"
-
 
 # get current date and time
 current_datetime = datetime.now()
