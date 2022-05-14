@@ -64,7 +64,7 @@ def main():
         
         # Writng logs into a file----------------------     
         # get current date and time
-        current_datet454ime = datetime.now()
+        current_datetime = datetime.now()
         # convert datetime obj to string
         str_current_datetime = str(current_datetime)
 
