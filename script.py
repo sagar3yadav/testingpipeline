@@ -61,19 +61,18 @@ def main():
     listOfRunningProcess = getListOfProcessSortedByMemory()
     for elem in listOfRunningProcess[:5] :
         print(elem)
+        
+        # Writng logs into a file----------------------     
+        # get current date and time
+        current_datetime = datetime.now()
+        # convert datetime obj to string
+        str_current_datetime = str(current_datetime)
 
-#Writng logs into a file----------------------     
-# get current date and time
-current_datetime = datetime.now()
-
-# convert datetime obj to string
-str_current_datetime = str(current_datetime)
-
-# create a file object along with extension
-file_name = "logs-"+str_current_datetime+".txt"
-file = open(file_name, 'w')
-file.writelines(elem)  
-file.close()
+        # create a file object along with extension
+        file_name = "logs-"+str_current_datetime+".txt"
+        file = open(file_name, 'w')
+        file.writelines(elem)  
+        file.close()
 
 if __name__ == '__main__':
    main()
