@@ -13,32 +13,40 @@ print(f"Machine: {my_system.machine}")
 print(f"Processor: {my_system.processor}")
 
 Actualdate = date.today().strftime("%m-%d-%y")
-print(Actualdate)
 
-def main():
-    print('*** Create a list of all running processes ***')
-    listOfProcessNames = list()
+globallist = []
+
+#def main():
+#print('*** Create a list of all running processes ***')
+listOfProcessNames = list()
+
     # Iterate over all running processes
-    for proc in psutil.process_iter():
+
+for proc in psutil.process_iter():
+
        # Get process detail as dictionary
-       pInfoDict = proc.as_dict(attrs=['pid', 'name', 'cpu_percent'])
+
+    pInfoDict = proc.as_dict(attrs=['pid', 'name', 'cpu_percent'])
+
        # Append dict of process detail in list
-       listOfProcessNames.append(pInfoDict)
+
+    listOfProcessNames.append(pInfoDict)
+
     # Iterate over the list of dictionary and print each elem
-    for elem in listOfProcessNames:
-        print(elem)
 
-        # Writng logs into a file----------------------
-        # get current date and time
-        current_datetime = datetime.now()
-        # convert datetime obj to string
-        str_current_datetime = str(current_datetime)
+for elem in listOfProcessNames:
 
-        # create a file object along with extension
-        file_name = "logs-"+str_current_datetime+".txt"
-        file = open(file_name, 'w')
-        file.writelines(elem)
-        file.close()
+       # print("elem")
 
-if __name__ == '__main__':
-   main()
+    globallist.append(elem)
+
+
+# Writng logs into a file----------------------
+current_datetime = datetime.now()
+# convert datetime obj to string
+str_current_datetime = str(current_datetime)
+# create a file object along with extension
+file_name = "logs-"+str_current_datetime+".txt"
+file = open(file_name, 'w')
+file.writelines(str(globallist))
+file.close()
