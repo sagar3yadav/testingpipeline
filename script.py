@@ -39,8 +39,11 @@ for elem in listOfProcessNames:
        # print("elem")
 
     globallist.append(elem)
+    
+print("ALL RUNNING PROCESS ON THE OS -------------------------")
+print(globallist)
 
-
+print("WRITING LOGS INTO THE TXT FILE")
 # Writng logs into a file----------------------
 current_datetime = datetime.now()
 # convert datetime obj to string
@@ -50,3 +53,5 @@ file_name = "logs-"+str_current_datetime+".txt"
 file = open(file_name, 'w')
 file.writelines(str(globallist))
 file.close()
+
+print("LOGS HAS BEEN GENTERATED AND STORED IN THIS FILE :" + file_name)
