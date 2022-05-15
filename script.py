@@ -17,7 +17,7 @@ Actualdate = date.today().strftime("%m-%d-%y")
 globallist = []
 
 #def main():
-#print('*** Create a list of all running processes ***')
+print('*** Create a list of all running processes ***')
 listOfProcessNames = list()
 
     # Iterate over all running processes
