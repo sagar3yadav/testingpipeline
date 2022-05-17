@@ -40,7 +40,7 @@ for elem in listOfProcessNames:
 
     globallist.append(elem)
     
-print("ALL RUNNING PROCESS ON THE OS -------------------------")
+print("ALL RUNNING PROCESS ON THE OS-------------- -------------------------")
 print(globallist)
 
 print("WRITING LOGS INTO THE TXT FILE")
